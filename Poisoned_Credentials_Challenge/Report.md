@@ -31,7 +31,7 @@ The incident chain begins when the user at `192.168.232.162` attempts to access 
 
 The filter immediately reveals a multicast query from `192.168.232.162` asking "Who has FILESHAARE?". This is the bait.
 
-![LLMNR Query](./llmnrquery.png)
+![LLMNR Query](./query.png)
 **Figure 1:** The victim machine `192.168.232.162` broadcasting for `FILESHAARE`.
 
 ### 2. The Attack: LLMNR Poisoning 
@@ -66,7 +66,7 @@ The attacker connects to the `IPC$` (Inter-Process Communication) share, a commo
 The successful "Tree Connect Request" and "Tree Connect Response" confirm that the stolen credentials were valid for `AccountingPC`.
 
 ![Lateral Movement](./hostname.png)
-**Figure 4:** The attacker successfully connecting to `AccountingPC` using the stolen credentials.
+**Figure 4:** The attacker successfully connected to `AccountingPC` using the stolen credentials.
 
 ---
 
