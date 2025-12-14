@@ -67,7 +67,7 @@ sudo ufw delete 2
 ```bash
 sudo ufw delete allow 80/tcp
 ```
-
+![Firewall Rules](./ufwrule.png)
 ## Testing
 - **Ping Test**: Blocked successfully
 ```bash
@@ -81,6 +81,8 @@ curl http://<vm_ip>
 ```bash
 ssh user@<vm_ip>
 ```
+![DoS](./ufwdos.jpeg)
+
 -**nmap scan**: Confirmed restricted ports
 ```bash
 namp <vm_ip>
