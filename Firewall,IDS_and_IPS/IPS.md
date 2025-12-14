@@ -28,6 +28,8 @@ sudo apt install iptables
 sudo nano /etc/snort/rules/local.rules
 drop icmp any any -> any any (msg: "ICMP Packet Dropped"; sid:2000001; rev:1;)
 ```
+![IPS rules](./ipsrules.png)
+
 ### 2.  Include Rules in `snort.lua`
 ```bash
 sudo nano /etc/snort/snort.lua
@@ -43,6 +45,8 @@ sudo iptables -I OUTPUT -j NFQUEUE
 ```bash
 sudo snort -c /etc/snort/snort.lua -R /etc/snort/rules/local.rules -Q --daq nfq -i eth0
 ```
+![IPS](./ips.png)
+
 ## Testing 
 - **Ping test**: Dropped successfully
   ```bash
@@ -56,6 +60,8 @@ sudo snort -c /etc/snort/snort.lua -R /etc/snort/rules/local.rules -Q --daq nfq 
   ```bash
   ssh user@<vm_ip>
   ```
+  ![IPS DoS Attack](./ipsdos.png)
+
 ## Managing Rules
 ### 1. Add New Rule
 ```bash
