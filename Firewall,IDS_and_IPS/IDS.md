@@ -41,6 +41,7 @@ ls
 sudo nano /etc/snort/rules/local.rules
 alert icmp any any -> any any (msg: "ICMP Packet Detected"; sid:1000001; rev:1;)
 ```
+![IDS rules](./idsrules.png)
 ### 3. Edit `snort.lua` to Include Local Rules
 ```bash
 sudo nano /etc/snort/snort.lua
@@ -56,6 +57,7 @@ sudo snort -c /etc/snort/snort.lua -R /etc/snort/rules/local.rules -i eth0 -A al
   ```bash
   ping <vm_ip>
   ```
+  ![IDS ping test](./idsping.jpeg)
 - **HTTP Test**: Allowed
   ```bash
   curl http://<vm_ip>
@@ -64,6 +66,8 @@ sudo snort -c /etc/snort/snort.lua -R /etc/snort/rules/local.rules -i eth0 -A al
   ```bash
   ssh user@<vm_ip>
   ```
+  ![IDS Dos Attack](./idsdos.png)
+  
 ## Managing Rules
 ### 1. Add New Rule
 ```bash
